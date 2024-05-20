@@ -17,6 +17,6 @@ def deserialize_car_object(json: bytes) -> Car:
     stream = io.BytesIO(json)
     data = JSONParser().parse(stream)
     serializer = CarSerializer(data=data)
-    serializer.is_valid()
-    serializer.save()
-    return serializer.data
+    serializer.is_valid(raise_exception=True)
+    car = serializer.save()
+    return car
