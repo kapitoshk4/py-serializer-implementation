@@ -6,7 +6,7 @@ from car.models import Car
 
 class CarSerializer(serializers.Serializer):
     class Meta:
-        fields = '__all__'
+        fields = "__all__"
         model = Car
 
     id = serializers.IntegerField(read_only=True)
